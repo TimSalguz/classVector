@@ -20,7 +20,7 @@ namespace ts
 
         void Add(int number);
 
-        void AddTo(int number);
+        void AddTo(int number, int wherePaste);
 
         void DeleteElementEnd();
 
@@ -37,6 +37,8 @@ namespace ts
         int Get() {return array[size];}
 
     private:
+        void TimVector::Expand1Array();
+        void TimVector::Reduce1Array();
 
     };
 }

@@ -5,19 +5,49 @@
 #include "classVector.hpp"
 namespace ts
 {
+    void TimVector::Reduce1Array()
+    {
+        int *tempArray = new int[size-1];
+        for (int i = 0; i < size-1; ++i)
+        {
+            tempArray[i] = array[i];
+        }
+        delete[] array;
+        array = tempArray;
+    }
+
+    void TimVector::Expand1Array()
+    {
+        int *tempArray = new int[size+1];
+        for (int i = 0; i < size; ++i)
+        {
+            tempArray[i] = array[i];
+        }
+        delete[] array;
+        array = tempArray;
+    }
+
     void TimVector::Add(int number)
     {
+        Expand1Array();
         array[size] = number;
         size++;
     }
 
-    void TimVector::AddTo(int number)
+    void TimVector::AddTo(int number, int wherePaste)
     {
+        Expand1Array();
+        for (int i = size-1; i > wherePaste-1; --i)
+        {
+            array[i+1] = array[i];
+        }
+        array[wherePaste] = number;
         size++;
     }
 
     void TimVector::DeleteElementEnd()
     {
+        Reduce1Array();
         size--;
     }
 
