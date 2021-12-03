@@ -23,7 +23,7 @@ int main()
         std::cout << array.GetFrom(i) << " "; std::cout << std::endl;
 
     std::cout << "After reduce:" << std::endl;
-    array.DeleteEnd();
+    array.DeleteLast();
     std::cout << "Mas size = " << array.Size() << std::endl;
     for(int i = 0; i < array.Size(); i++)
         std::cout << array.GetFrom(i) << " "; std::cout << std::endl;

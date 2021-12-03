@@ -1,7 +1,6 @@
 //
 // Created by TimSalguz on 03.12.2021.
 //
-#include <iostream>
 
 #ifndef CLASSVECTOR_CLASSVECTOR_HPP
 #define CLASSVECTOR_CLASSVECTOR_HPP
@@ -22,7 +21,7 @@ namespace ts
 
         void AddTo(int number, int wherePaste);
 
-        void DeleteEnd();
+        void DeleteLast();
 
         void DeleteFirst();
 
