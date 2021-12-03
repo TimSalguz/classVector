@@ -7,8 +7,8 @@ namespace ts
 {
     void TimVector::Add(int number)
     {
+        array[size] = number;
         size++;
-        array[size-1] = number;
     }
 
     void TimVector::AddTo(int number)
