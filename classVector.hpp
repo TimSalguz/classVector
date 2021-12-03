@@ -22,11 +22,13 @@ namespace ts
 
         void AddTo(int number, int wherePaste);
 
-        void DeleteElementEnd();
+        void DeleteEnd();
 
-        void DeleteElementCenter(int numberElement);
+        void DeleteFirst();
 
-        int Size() {return size;}
+        void DeleteCenter(int numberElement);
+
+        int Size();
 
         int GetMax();
 
@@ -34,7 +36,9 @@ namespace ts
 
         int GetFrom(int numberElement);
 
-        int Get() {return array[size];}
+        int GetLast();
+
+        int GetFirst();
 
     private:
         void TimVector::Expand1Array();

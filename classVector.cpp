@@ -45,25 +45,39 @@ namespace ts
         size++;
     }
 
-    void TimVector::DeleteElementEnd()
+    void TimVector::DeleteEnd()
     {
         Reduce1Array();
         size--;
     }
 
-    void TimVector::DeleteElementCenter(int numberElement)
+    void TimVector::DeleteFirst()
     {
-
+        for (int i = 0; i < size-1; ++i)
+        {
+            array[i] = array[i+1];
+        }
+        Reduce1Array();
         size--;
-        if(numberElement<0)
-        {
-            //numberElementBegin++;
-        }
-        else
-        {
-            //numberElementEnd--;
-        }
     }
+
+    void TimVector::DeleteCenter(int numberElement)
+    {
+        for (int i = numberElement; i < size-1; ++i)
+        {
+            array[i] = array[i+1];
+        }
+        Reduce1Array();
+        size--;
+    }
+
+    int TimVector::GetLast() {return array[size-1];}
+
+    int TimVector::GetFirst() {return array[0];}
+
+
+    int TimVector::Size() {return size;}
+
 
     int TimVector::GetMax()
     {
@@ -78,7 +92,7 @@ namespace ts
     {
         int min = INT_MAX;
         for(int i = 0; i < size; i++)
-            if(array[i] > min)
+            if(array[i] < min)
                 min = array[i];
         return min;
     }
